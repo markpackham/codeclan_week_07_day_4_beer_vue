@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch("https://api.punkapi.com/v2/beers?page=2&per_page=80")
       .then(res => res.json())
       .then(beers => (this.beers = beers));
   },

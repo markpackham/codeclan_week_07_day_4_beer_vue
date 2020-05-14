@@ -18,9 +18,9 @@
         </div>
 
         <h3>Full list of beers</h3>
-            <ul>
+            <ol>
                 <li v-for="(beer, index) in beers" :beer="beer" :key="index">{{beer.name}}</li>
-            </ul>
+            </ol>
     </div>
 </template>
 
