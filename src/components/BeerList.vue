@@ -13,10 +13,9 @@
             <button v-if="!favBeers.includes(selectedBeer)" v-on:click="addToFav">Add beer to favourites</button>
             <p>Favourite beers list</p>
             <ul>
-                <li v-for="(beer, index) in favBeers" :beer="beer" :key="index">{{beer.name}}</li>
+                <li v-for="(beer, index) in favBeers" :beer="beer" :key="index">{{beer.name}} <button v-on:click="removeFav">Deselect {{beer.name}}</button></li>
             </ul>
         </div>
-
         <h3>Full list of beers</h3>
             <ol>
                 <li v-for="(beer, index) in beers" :beer="beer" :key="index">{{beer.name}}</li>
@@ -44,6 +43,9 @@ export default {
             console.log(this.selectedBeer);
             this.favBeers.push(this.selectedBeer)
             console.log("Fav beer arrary ", this.favBeers)
+        },
+        removeFav(){
+            this.favBeers.splice(this.favBeers.indexOf(this.selectedBeer), 1)
         }
     }
 
