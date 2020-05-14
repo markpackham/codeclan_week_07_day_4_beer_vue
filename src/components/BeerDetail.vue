@@ -6,19 +6,24 @@
       <p>Tagline: {{beer.tagline}}</p>
       <p>Description: {{beer.description}}</p>
       <p>Ingredients:</p>
-      
+
+      <h3>Malt</h3>
       <ul v-for="(malt_ingredient, index) in beer.ingredients.malt" :key="index">
         <li>{{malt_ingredient.name}}</li>
       </ul>
 
-      <ul v-for="(hops_ingredient, index) in beer.ingredients.hops" :key="index + beer.ingredients.malt.length">
+      <h3>Hops</h3>
+      <ul
+        v-for="(hops_ingredient, index) in beer.ingredients.hops"
+        :key="index + beer.ingredients.malt.length"
+      >
         <li>{{hops_ingredient.name}}</li>
       </ul>
 
+      <h3>Yeast</h3>
       <ul>
         <li>{{beer.ingredients.yeast}}</li>
       </ul>
-
     </div>
   </div>
 </template>
@@ -34,9 +39,11 @@ export default {
     };
   },
   computed: {
-    ingredients(){
-      if (this.beer){
-        const allIngredients = this.beer.ingredients.malt.concat(this.beer.ingredients.hops)
+    ingredients() {
+      if (this.beer) {
+        const allIngredients = this.beer.ingredients.malt.concat(
+          this.beer.ingredients.hops
+        );
         return new Set(allIngredients);
       }
     }
