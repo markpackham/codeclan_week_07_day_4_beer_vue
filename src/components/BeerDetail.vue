@@ -1,7 +1,12 @@
 <template>
-<div>
-    Hello beer detail
+  <div>
+    <h3>Beer Detail</h3>
+    <div v-if="beer">
+      <h2>{{beer.name}}</h2>
+      <p>Tagline: {{beer.tagline}}</p>
+      <p>Description: {{beer.description}}</p>
     </div>
+  </div>
 </template>
 
 <script>

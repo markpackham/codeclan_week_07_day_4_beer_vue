@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Beer List</h1>
+    <beer-detail />
         <div>
             <beer-list :beers='beers'></beer-list>
         </div>
@@ -31,4 +32,13 @@ export default {
 </script>
 
 <style>
+h1 {
+  text-align: center;
+  padding: 1rem;
+}
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
 </style>
