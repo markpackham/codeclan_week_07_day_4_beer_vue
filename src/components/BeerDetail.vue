@@ -33,6 +33,7 @@ export default {
       beer: null
     };
   },
+// 
   mounted() {
     eventBus.$on("beer-selected", beer => {
       this.beer = beer;

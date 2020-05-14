@@ -13,7 +13,7 @@
             <button v-if="!favBeers.includes(selectedBeer)" v-on:click="addToFav">Add beer to favourites</button>
             <p>Favourite beers list</p>
             <ul>
-                <li v-for="(beer, index) in favBeers" :beer="beer" :key="index">{{beer.name}} <button v-on:click="removeFav">Deselect {{beer.name}}</button></li>
+                <li v-for="(beer, index) in favBeers" :beer="beer" :key="index">{{beer.name}} <button v-on:click="removeFav(beer)">Deselect {{beer.name}}</button></li>
             </ul>
         </div>
         <h3>Full list of beers</h3>
@@ -40,12 +40,10 @@ export default {
             eventBus.$emit('beer-selected', this.selectedBeer)
         },
         addToFav(){
-            console.log(this.selectedBeer);
             this.favBeers.push(this.selectedBeer)
-            console.log("Fav beer arrary ", this.favBeers)
         },
-        removeFav(){
-            this.favBeers.splice(this.favBeers.indexOf(this.selectedBeer), 1)
+        removeFav(beer){
+            this.favBeers.splice(this.favBeers.indexOf(beer), 1)
         }
     }
 
