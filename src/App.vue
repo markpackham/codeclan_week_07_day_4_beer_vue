@@ -16,7 +16,8 @@ export default {
   name: "app",
   data() {
     return {
-      beers: []
+      beers: [],
+      beersFav: []
     };
   },
   mounted() {
@@ -26,7 +27,7 @@ export default {
   },
   components: {
     "beer-list": BeerList,
-    "beer-detail": BeerDetail
+    "beer-detail": BeerDetail,
   }
 };
 </script>
